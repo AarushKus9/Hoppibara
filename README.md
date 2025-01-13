@@ -36,7 +36,7 @@ https://github.com/user-attachments/assets/2e04aa6c-ca92-4ef0-9496-949b3d1cefce
 2. Open your web browser and navigate to `http://localhost:8080` (or the port specified by your server).
 
 ## Deployment
-To deploy the game on Netlify or any other static site hosting service, simply upload the contents of the `www` directory.
+It is not impossible to depoly like this but if you convert this to html it is possible.
 
 ## Controls
 - `Left Arrow`: Move left
