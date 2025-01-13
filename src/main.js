@@ -15,6 +15,8 @@ kaboom({
   background: [255, 211, 147],
   color: [0, 0, 0],
   backgroundAudio: true,
+  fullscreen: true, // Enable fullscreen
+  scale: 1, // Scale to fit the screen
 });
 
 debug.inspect = false;
@@ -46,7 +48,11 @@ loadSprite("Main", "/sprites/Board.svg");
 loadSprite("Text", "/sprites/Button.svg");
 loadSprite("oranges", "/sprites/obstacle1.png");
 
-loadFont("MainFont", "/sprites/BaiJamjuree-Bold.ttf");
+loadFont("MainFont", "/sprites/BaiJamjuree-Bold.ttf", { 
+  size: 50, 
+  outline: .1, 
+  outlineColor: [0, 0, 0] 
+});
 
 loadSound("MainMusic", "/sprites/MainMusic.mp3");
 loadSound("Jump", "/sprites/Jump.mp3");
@@ -70,7 +76,7 @@ scene("game", (score) => {
 
   const player = add([
     sprite("bean", { anim: "Run" }),
-    pos(80, 40),
+    pos(width() * 0.1, height() * 0.1), // Relative positioning
     rotate(0),
     area(),
     body(),
@@ -229,7 +235,7 @@ scene("game", (score) => {
       size: 50,
     }),
     color(0, 0, 0),
-    pos(1000, 24),
+    pos(width() * 0.5, height() * 0.05), // Relative positioning
     z(4),
   ]);
 });
@@ -239,7 +245,12 @@ scene("MainScreen", (score) => {
     PlayMusic("MainMusic");
   }
 
-  add([sprite("Main"), pos(959, 400), scale(1), anchor("center")]);
+  const mainSprite = add([
+    sprite("Main"),
+    pos(width() / 2, height() / 2),
+    scale(Math.min(width() / 1900, height() / 720)), // Dynamic scaling
+    anchor("center"),
+  ]);
 
   add([
     text(`Score: ${score}`, {
