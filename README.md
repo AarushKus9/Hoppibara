@@ -12,7 +12,7 @@ MyGame is an exciting platformer game built using the Kaboom.js game development
 - Score tracking
 
 ## Preview
-![Game Preview](www/sprites/Preview.mkv)
+![Game Preview](www/sprites/Preview.mp4)
 
 ## Installation
 1. Clone the repository:
