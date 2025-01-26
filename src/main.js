@@ -15,7 +15,6 @@ kaboom({
   background: [255, 211, 147],
   color: [0, 0, 0],
   backgroundAudio: true,
-  fullscreen: true, // Enable fullscreen
   scale: 1, // Scale to fit the screen
 });
 
@@ -107,7 +106,7 @@ scene("game", (score) => {
   WindowSpawn();
 
   function Floor() {
-    const floorWidth = width();
+    const floorWidth = width() + 60;
     const floorHeight = height() + 491;
     const SPEED = 400;
 
